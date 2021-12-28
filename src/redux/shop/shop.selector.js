@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
 import memoize from "lodash.memoize";
 
-const selectShop = (stage) => stage.shop;
+const selectShop = (state) => state.shop;
 
 export const selectCollections = createSelector(
   [selectShop],
@@ -18,4 +18,14 @@ export const selectCollection = memoize((collectionUrlParam) =>
     [selectCollections],
     (collections) => collections[collectionUrlParam]
   )
+);
+
+export const selectIsCollectionFetching = createSelector(
+  [selectShop],
+  (shop) => shop.isFetching
+);
+
+export const selectIsCollectionsLoaded = createSelector(
+  [selectShop],
+  (shop) => !!shop.collections
 );
