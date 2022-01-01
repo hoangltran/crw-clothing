@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
-import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 import { signUpStart } from "../../redux/user/user.actions";
 import { SignUpContainer, SignUpTitle } from "./sign-up.styles";
 
@@ -24,6 +23,7 @@ const SignUp = () => {
     }
     const signUpStartHandler = (userCredentials) =>
       dispatch(signUpStart(userCredentials));
+
     signUpStartHandler({ email, password, displayName });
   };
 

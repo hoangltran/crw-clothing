@@ -10,8 +10,6 @@ import {
 import {
   signInFailure,
   signInSuccess,
-  checkUserSession,
-  signOutStart,
   signOutSuccess,
   signOutFailure,
   signUpFailure,
